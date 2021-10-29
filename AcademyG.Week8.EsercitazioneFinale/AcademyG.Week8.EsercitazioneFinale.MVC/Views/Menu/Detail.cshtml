@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Dettaglio Menù";
+}
+
+@model IEnumerable<PiattoViewModel>
+
+<h1>ELENCO PIATTI</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Piatto</th>
+            <th scope="col">Descrizione</th>
+            <th scope="col">Tipologia</th>
+            <th scope="col">Prezzo</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.Descrizione</td>
+                <td>@item.Tipologia</td>
+                <td>@item.Prezzo</td>
+            </tr>
+        }
+    </tbody>
+</table>

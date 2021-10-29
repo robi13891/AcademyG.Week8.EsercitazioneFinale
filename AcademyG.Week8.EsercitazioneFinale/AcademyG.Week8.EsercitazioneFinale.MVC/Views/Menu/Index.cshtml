@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "I nostri Menù";
+}
+
+@model IEnumerable<MenuViewModel>
+
+
+<h1>ELENCO MENU</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Menù</th>
+            <th scope="col">Elenco Piatti</th>
+            <th scope="col"></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Nome</td>
+            <td>
+                @Html.ActionLink("Elenco Piatti", "Detail", "Menu", new { id = item.Id })
+            </td>
+            <td>
+                @Html.ActionLink("Modifica Nome", "Edit", "Menu", new { id = item.Id }) |
+                @Html.ActionLink("Cancella Piatto", "Delete", "Menu", item.Id)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
